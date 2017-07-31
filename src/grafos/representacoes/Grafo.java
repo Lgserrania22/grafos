@@ -5,29 +5,41 @@
  */
 package grafos.representacoes;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
  *
- * @author a14034
+ * @author programacao
  */
-public interface Grafo {
+public abstract class Grafo {
+    public abstract int getNumeroDeVertices();
 
-    public int getNumeroDeVertices();
+    public abstract void addAresta(int origem, int destino);
 
-    public void addAresta(int origem, int destino);
+    public abstract void addAresta(int origem, int destino, double peso);
+    
+    public abstract void addArestaOrientada(int origem, int destino);
+    
+    public abstract void addArestaOrientada(int origem, int destino, double peso);
 
-    public void addAresta(int origem, int destino, double peso);
+    public abstract void setAresta(int origem, int destino);
 
-    public void setAresta(int origem, int destino);
+    public abstract void setAresta(int origem, int destino, double peso);
 
-    public void setAresta(int origem, int destino, double peso);
+    public abstract void removeAresta(int origem, int destino);
 
-    public void removeAresta(int origem, int destino);
+    public abstract boolean isAdjacente(int origem, int destino);
 
-    public boolean isAdjacente(int origem, int destino);
+    public abstract List getAdjacentes(int vertice);
 
-    public List getAdjacentes(int vertice);
-
-    public double getPeso(int origem, int destino);
+    public abstract double getPeso(int origem, int destino);
+    
+    public abstract int addVertice();
+    
+    public abstract void imprime();
+    
+    public abstract void buscaEmLargura(int raiz);
+    
+    public abstract String paisEDistancias();
 }

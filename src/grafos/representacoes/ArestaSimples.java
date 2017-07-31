@@ -14,6 +14,7 @@ public class ArestaSimples implements InterfaceAresta{
     private int origem;
     private int destino;
     private double peso;
+    private String tipo = null;
     
     public ArestaSimples(){
         this.origem = -1;
@@ -66,5 +67,20 @@ public class ArestaSimples implements InterfaceAresta{
         return this.peso;
     }
     
+    public void setTipo(String tipo){
+        this.tipo = tipo;
+    }
+    
+   public String getTipo(){
+       if(this.tipo != null){
+           return this.tipo;
+       }else{
+           System.out.println("Aresta não classificada!");
+           return null;
+       }
+   }
    
+   public double compareTo(ArestaSimples aresta){
+       return this.peso - aresta.peso;
+   }
 }
